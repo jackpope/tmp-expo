@@ -1,18 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`react-native-test-renderer returns expected JSON output based on renderer component 1`] = `
+exports[`render toJSON returns expected JSON output based on renderer component 1`] = `
 "<>
   <RCTView>
     <RCTText accessible=true allowFontScaling=true ellipsizeMode="tail" isHighlighted=false selectionColor=null>
       <RCTRawText text="Hello" />
     </RCTText>
-    <RCTView />
+    <RCTView>
+      <RCTText accessible=true allowFontScaling=true ellipsizeMode="tail" isHighlighted=false selectionColor=null>
+        <RCTRawText text="World" />
+      </RCTText>
+    </RCTView>
   </RCTView>
 </>"
 `;
 
 exports[`rtr returns expected JSON output based on renderer component 1`] = `
-<RCTView>
+<RCTView
+  testID="top"
+>
   <RCTText
     accessible={true}
     allowFontScaling={true}
@@ -22,6 +28,18 @@ exports[`rtr returns expected JSON output based on renderer component 1`] = `
   >
     Hello
   </RCTText>
-  <RCTView />
+  <RCTView
+    testID="world-container"
+  >
+    <RCTText
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      isHighlighted={false}
+      selectionColor={null}
+    >
+      World
+    </RCTText>
+  </RCTView>
 </RCTView>
 `;
